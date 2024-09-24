@@ -13,6 +13,23 @@ import (
 
 func main() {
 
+	learnSHAProblem()
+
+	learnTwoSumProblem()
+
+	learnBinarySearch()
+
+	learnMaximumSubArraySum()
+
+	learnComposition()
+
+}
+
+/**This function helps you to
+* convert two given string and find out
+* total count of different element
+**/
+func learnSHAProblem() {
 	fmt.Println("******* SHA-256 Problem begain from here ******* ")
 
 	// SHA 256 Algorithm
@@ -27,15 +44,6 @@ func main() {
 	diffbits := sha.CountDifferentBits(hash1, hash2)
 
 	fmt.Println("Number of different item count is ", diffbits)
-
-	learnTwoSumProblem()
-
-	learnBinarySearch()
-
-	learnMaximumSubArraySum()
-
-	learnComposition()
-
 }
 
 // TWO Sum Problem
