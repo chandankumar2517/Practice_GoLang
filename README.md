@@ -27,7 +27,7 @@ The repository is organized into subdirectories, each representing a separate pr
    ```
 2. **Navigate to a project directory:**
    ```bash
-   cd golang-projects/project_name
+   cd golang-projects/Practice_GoLang
    ```
 3. **Run the project:**
    ```bash
