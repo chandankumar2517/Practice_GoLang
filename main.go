@@ -5,6 +5,9 @@ import (
 	"fmt"
 
 	binarysearch "github.com/chandankumar2517/BinarySearch"
+	channelexample "github.com/chandankumar2517/ChannelExample"
+	checkSingletonExample "github.com/chandankumar2517/DesignPattern"
+	goroutinecommunication "github.com/chandankumar2517/GoRoutineCommunicationExample"
 	maxSubArray "github.com/chandankumar2517/MaximumSubArray"
 	sha "github.com/chandankumar2517/ShaAlgorithm"
 	twosum "github.com/chandankumar2517/TwoSum"
@@ -12,6 +15,8 @@ import (
 )
 
 func main() {
+
+	learGoRoutineCommunication()
 
 	learnSHAProblem()
 
@@ -23,6 +28,15 @@ func main() {
 
 	learnComposition()
 
+	learnChannelCommunication()
+
+	larnSingletonDesingPattern()
+
+}
+
+func learGoRoutineCommunication() {
+	goroutinecommunication.LearnCommunication()
+	print("\n")
 }
 
 /**This function helps you to
@@ -106,4 +120,18 @@ func learnComposition() {
 	}
 
 	newGame.ShowGameDetails()
+}
+
+// simple example for goroutines communicate using channels
+func learnChannelCommunication() {
+	channelexample.ShowChannel()
+}
+
+func larnSingletonDesingPattern() {
+	S1 := checkSingletonExample.GetInstance()
+	S2 := checkSingletonExample.GetInstance()
+
+	result := S1 == S2
+	fmt.Println("Singelton instace are same or not = ", result)
+
 }
