@@ -6,7 +6,8 @@ import (
 
 	binarysearch "github.com/chandankumar2517/BinarySearch"
 	channelexample "github.com/chandankumar2517/ChannelExample"
-	checkSingletonExample "github.com/chandankumar2517/DesignPattern"
+	checkFactoryDesignExample "github.com/chandankumar2517/DesignPattern/FactoryPattern"
+	checkSingletonExample "github.com/chandankumar2517/DesignPattern/SingletonPattern"
 	goroutinecommunication "github.com/chandankumar2517/GoRoutineCommunicationExample"
 	maxSubArray "github.com/chandankumar2517/MaximumSubArray"
 	sha "github.com/chandankumar2517/ShaAlgorithm"
@@ -30,7 +31,9 @@ func main() {
 
 	learnChannelCommunication()
 
-	larnSingletonDesingPattern()
+	learnSingletonDesingPattern()
+
+	learnFactoryDesingPattern()
 
 }
 
@@ -127,11 +130,24 @@ func learnChannelCommunication() {
 	channelexample.ShowChannel()
 }
 
-func larnSingletonDesingPattern() {
+func learnSingletonDesingPattern() {
+	fmt.Println("*** Singleton Desing Pattern **** ")
 	S1 := checkSingletonExample.GetInstance()
 	S2 := checkSingletonExample.GetInstance()
 
 	result := S1 == S2
 	fmt.Println("Singelton instace are same or not = ", result)
 
+}
+
+func learnFactoryDesingPattern() {
+	fmt.Println("*** Factory Desing Pattern **** ")
+
+	facotry := checkFactoryDesignExample.ShapeFactory{}
+
+	rectangle := facotry.CreateShape("Reactangle")
+	square := facotry.CreateShape("Square")
+
+	rectangle.Draw()
+	square.Draw()
 }
