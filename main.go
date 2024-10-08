@@ -3,13 +3,16 @@ package main
 import (
 	"crypto/sha256"
 	"fmt"
+	"time"
 
 	binarysearch "github.com/chandankumar2517/BinarySearch"
 	channelexample "github.com/chandankumar2517/ChannelExample"
 	checkFactoryDesignExample "github.com/chandankumar2517/DesignPattern/FactoryPattern"
+	pipelinedesignpattern "github.com/chandankumar2517/DesignPattern/PipeLinePattern"
 	checkSingletonExample "github.com/chandankumar2517/DesignPattern/SingletonPattern"
 	goroutinecommunication "github.com/chandankumar2517/GoRoutineCommunicationExample"
 	maxSubArray "github.com/chandankumar2517/MaximumSubArray"
+	reversedString "github.com/chandankumar2517/ReverseGivenString"
 	sha "github.com/chandankumar2517/ShaAlgorithm"
 	twosum "github.com/chandankumar2517/TwoSum"
 	compositionexample "github.com/chandankumar2517/compositionExample"
@@ -17,29 +20,47 @@ import (
 
 func main() {
 
+	learnReverseGivenString()
+
 	learGoRoutineCommunication()
 
-	learnSHAProblem()
+	learWorkerPoolCommunication()
 
-	learnTwoSumProblem()
+	//learnSHAProblem()
 
-	learnBinarySearch()
+	//learnTwoSumProblem()
 
-	learnMaximumSubArraySum()
+	//learnBinarySearch()
 
-	learnComposition()
+	//learnMaximumSubArraySum()
 
-	learnChannelCommunication()
+	//learnComposition()
 
-	learnSingletonDesingPattern()
+	//learnChannelCommunication()
 
-	learnFactoryDesingPattern()
+	//learnSingletonDesingPattern()
 
+	//learnFactoryDesingPattern()
+
+	//learnPipeLineDesignPattern()
+
+}
+
+func learnReverseGivenString() {
+	s1 := "Chandan"
+	fmt.Println("Provided String to be reversed ", s1)
+	reversedString := reversedString.ReverseGivenString(s1)
+
+	fmt.Println("Reversed String is ", reversedString)
 }
 
 func learGoRoutineCommunication() {
 	goroutinecommunication.LearnCommunication()
 	print("\n")
+}
+
+func learWorkerPoolCommunication() {
+	goroutinecommunication.WorkerPool()
 }
 
 /**This function helps you to
@@ -150,4 +171,17 @@ func learnFactoryDesingPattern() {
 
 	rectangle.Draw()
 	square.Draw()
+}
+
+func learnPipeLineDesignPattern() {
+	fmt.Println(" **** Pipe Line Design Pattern **** ")
+
+	number := make(chan int)
+	square := make(chan int)
+
+	go pipelinedesignpattern.GenerateNumber(number)
+	go pipelinedesignpattern.SquareNumbers(number, square)
+	go pipelinedesignpattern.PrintNumbers(square)
+
+	time.Sleep(time.Second)
 }

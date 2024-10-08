@@ -29,3 +29,27 @@ func LearnCommunication() {
 	wg.Wait()
 
 }
+
+func WorkerPool() {
+	var wg sync.WaitGroup
+	ch := make(chan int)
+
+	for i := 0; i < 10; i++ {
+		wg.Add(1)
+		go worker(ch, &wg)
+		ch <- i
+	}
+
+	close(ch)
+	wg.Wait()
+
+}
+
+func worker(value <-chan int, wg *sync.WaitGroup) {
+
+	defer wg.Done()
+	result := <-value
+
+	fmt.Println(result)
+
+}
