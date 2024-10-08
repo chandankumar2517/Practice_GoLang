@@ -26,23 +26,23 @@ func main() {
 
 	learWorkerPoolCommunication()
 
-	//learnSHAProblem()
+	learnSHAProblem()
 
-	//learnTwoSumProblem()
+	learnTwoSumProblem()
 
-	//learnBinarySearch()
+	learnBinarySearch()
 
-	//learnMaximumSubArraySum()
+	learnMaximumSubArraySum()
 
-	//learnComposition()
+	learnComposition()
 
-	//learnChannelCommunication()
+	learnChannelCommunication()
 
-	//learnSingletonDesingPattern()
+	learnSingletonDesingPattern()
 
-	//learnFactoryDesingPattern()
+	learnFactoryDesingPattern()
 
-	//learnPipeLineDesignPattern()
+	learnPipeLineDesignPattern()
 
 }
 
